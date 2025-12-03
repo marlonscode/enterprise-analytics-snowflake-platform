@@ -41,7 +41,7 @@ def handler(event, context):
         feed_items = sentiment_data.get("feed", [])
         jsonl_body = "\n".join(json.dumps(item) for item in feed_items)
         timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H-%M-%SZ")
-        s3_key = f"sentiment/sentiment_{timestamp}.json"
+        s3_key = f"sentiment/sentiment_{timestamp}.jsonl"
         s3_client.put_object(
             Bucket=S3_BUCKET_NAME,
             Key=s3_key,
