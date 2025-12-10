@@ -1,0 +1,22 @@
+models:
+  - name: fx_latest_rate
+    description: "Staging table for latest foreign exchange rates"
+    columns:
+      - name: base
+        description: "The base currency code"
+        tests:
+          - not_null
+      - name: date
+        description: "The date of the exchange rate"
+        tests:
+          - not_null
+      - name: rates
+        description: "The exchange rate value"
+        tests:
+          - not_null
+      - name: success
+        description: "Indicates if the rate retrieval was successful"
+      - name: timestamp
+        description: "The timestamp of the rate retrieval"
+        tests:
+          - not_null

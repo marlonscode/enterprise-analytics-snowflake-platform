@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bike_business
+    database: business_operations
+    schema: raw
+    tables:
+      - name: fx_latest_rate
