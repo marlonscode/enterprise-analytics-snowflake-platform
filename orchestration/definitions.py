@@ -6,7 +6,7 @@ from orchestration.assets.airbyte import get_airbyte_objects
 airbyte_workspace, airbyte_assets = get_airbyte_objects()
 
 defs = Definitions(
-    assets=[*airbyte_assets, dbt_warehouse],
+    assets=[*airbyte_assets],
     resources={
         "airbyte": airbyte_workspace,
         # "dbt_warehouse_resource": dbt_warehouse_resource
