@@ -3,12 +3,12 @@ name = "orchestration"
 requires-python = ">=3.10,<3.15"
 version = "0.1.0"
 dependencies = [
-    "dagster",
-    "dagster-cloud",
-    "dagster-airbyte",
-    "dagster-dbt",
-    "dbt-core",
-    "dbt-snowflake"
+    "dagster==1.12.6",
+    "dagster-cloud==0.16.0",
+    "dagster-airbyte==0.28.6",
+    "dagster-dbt==0.28.6",
+    "dbt-core==1.6.4",
+    "dbt-snowflake==1.6.4"
 ]
 
 [dependency-groups]
