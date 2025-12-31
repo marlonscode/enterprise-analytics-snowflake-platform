@@ -1,0 +1,5 @@
+locations:
+- code_source:
+    module_name: orchestration.definitions
+  location_name: snowflake_orchestration
+  working_directory: ./
