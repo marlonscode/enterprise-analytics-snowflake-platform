@@ -5,11 +5,17 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 dependencies = [
-    "dagster>=1.12,<1.13",
-    "dagster-cloud",
-    "dagster-airbyte",
+    # Dagster core
+    "dagster==1.12.12",
+    "dagster-cloud==0.8.2",
+    "dagster-airbyte==0.28.2",
+    
+    # Dagster dbt integration
     "dagster-dbt==0.28.6",
-    "dbt-snowflake"
+    
+    # Pin dbt-core and dbt adapter
+    "dbt-core==1.10.0",
+    "dbt-snowflake==1.10.0"
 ]
 
 
