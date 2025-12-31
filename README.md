@@ -1,68 +1,26 @@
-Fact tables
-- SALE: grain @ sales order detail
-dims
-- product_key
-- customer_key
-- order_status_key
-- shipping_address_key
-- credit_card_key
-
-- PRODUCTION WORKORDER: grain @ order
-dims
-- product_key
-
-DONE - Dimensions
-* dim_product
-* dim_customer
-* dim_credit_card
-* dim_address
-* dim_order_status
-* dim_date
-
-
-Business questions
-- FX
-  - What is the currency exchange rate for our largest market (USA)?
-- Sentiment
-  - How did people feel about our company this past week, based off news headlines?
-- Business
-  - Pie chart - % of inventory in each category 
-  - Global map heatmap - revenue by country over all time
-  - Horizontal bar - revenue by product category over all time
-  - Table - top revenue products over last 30 days
-  - Line - Profit by day over the last 30 days
-
-
-
-
-
 # Enterprise Analytics Snowflake Platform ❄️ 📈
 
-- European Bicycle manufacturing company
-- Sells to the US
-- Publicly traded
-- Sentiment score
+I wanted to model a real-world enterprise analytics platform, so I built one using Snowflake! The platform represents the operations of a fictional bicycle manufacturing enterprise. Various types of data are ingested into the platform:
 
-Inspired by F1, I built an end-to-end Databricks platform on F1 data. It supports both batch and streaming workloads and covers the entire data engineering lifecycle - from data generation to serving. Two types of data are ingested into the platform:
-
-- Historical data on race results (batch)
-- Real-time data on track weather conditions, via simulated IoT sensors (streaming)
+- Daily public sentiment data about the company, based on recent news headlines
+- Hourly foreign exchange data for selected markets
+- Daily business operations data
 <br>
 
 ## Goal
 
 The goal of this platform is to answer the following business questions:
 
-- What is the performance of the top 5 teams over the last 50 years?
-- Who are the best drivers in history?
-- Which driver/team won the last 10 seasons?
-- Which countries produce the most drivers?
-- What are the live weather conditions at each track?
+- What is the revenue/profit of the last month?
+- What types of products do we sell the most?
+- Which products have the best profit margin?
+- What is the current exhange rate of our largest market?
+- How do people feel about our company (public sentiment)?
 <br>
 
 ## End Result
 
-The end result is the following dashboard, which answers the business questions exactly
+The end result is the following dashboard, which answers these questions
 
 <img src="images/preset1.png" alt="Description" width="700" />
 Figure: Historical F1 analysis
@@ -161,17 +119,12 @@ Figure: Airbye connections
 <br>
 
 <img src="images/db.png" alt="Description" width="700" />
-Figure: Databricks compute cluster monitoring
+Figure: Snowflake compute cluster monitoring
 <br>
 <br>
 
 <img src="images/dagster.png" alt="Description" width="700" />
 Figure: Dagster pipeline successful run
-<br>
-<br>
-
-<img src="images/kafka.png" alt="Description" width="700" />
-Figure: Confluent Kafka S3 connector
 <br>
 <br>
 
