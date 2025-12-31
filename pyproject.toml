@@ -9,7 +9,6 @@ dependencies = [
     "dagster-cloud",
     "dagster-airbyte",
     "dagster-dbt==0.28.6",
-    "dbt-core>=1.7,<1.11",
     "dbt-snowflake"
 ]
 
