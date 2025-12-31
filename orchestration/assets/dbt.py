@@ -18,6 +18,7 @@ dbt_manifest_path = (
     .joinpath("manifest.json")
 )
 
+
 class CustomDagsterDbtTranslator(DagsterDbtTranslator):
     def get_automation_condition(self, dbt_resource_props): 
         return AutomationCondition.eager()
