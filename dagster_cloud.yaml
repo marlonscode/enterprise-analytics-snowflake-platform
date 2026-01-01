@@ -1,5 +1,0 @@
-locations:
-- code_source:
-    package_name: orchestration.definitions
-  location_name: orchestration
-working_directory: ./

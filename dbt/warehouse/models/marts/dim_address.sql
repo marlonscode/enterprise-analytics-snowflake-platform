@@ -10,6 +10,7 @@ select
     address.addressline1 as street_address,
     address.city,
     sp.name as state_province,
+    {{ us_state_to_iso_3166_2('sp.name') }} as state_province_iso_3166_2,
     countryregion.name as country
 from {{ ref('ops_address') }} as address
 left join {{ ref('ops_stateprovince') }} as sp
