@@ -45,4 +45,4 @@ __pycache__
 
 .DS_Store
 
-.pytest_cache
+.pytest_cache/
