@@ -11,11 +11,9 @@ class CustomDagsterAirbyteTranslator(DagsterAirbyteTranslator):
         )
 
 connections_list = [
-    "pg_to_db",
-    "iot_ap_to_db",
-    "iot_at_to_db",
-    "iot_hu_to_db",
-    "iot_tt_to_db",
+    "bike_store_to_snowflake",
+    "forex_api_to_snowflake",
+    "sentiment_to_snowflake",
     ]
 
 def get_airbyte_objects():
