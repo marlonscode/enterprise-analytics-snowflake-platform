@@ -6,7 +6,13 @@ sources:
     schema: raw
     tables:
       - name: fx_latest_rate
-      - name: sentiment
+        loaded_at_field: _airbyte_extracted_at
+        freshness:
+          warn_after: {count: 2, period: hour}
+      - name: sentiment      
+        loaded_at_field: _airbyte_extracted_at
+        freshness:
+          warn_after: {count: 2, period: hour}
       - name: ops_address
       - name: ops_country_region
       - name: ops_credit_card

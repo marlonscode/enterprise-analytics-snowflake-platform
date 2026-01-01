@@ -1,5 +1,7 @@
-from dagster import EnvVar, AutomationCondition, AssetSpec, AssetKey
+from dagster import EnvVar, AutomationCondition, AssetSpec, AssetKey, DailyPartitionsDefinition
 from dagster_airbyte import AirbyteWorkspace, build_airbyte_assets_definitions, DagsterAirbyteTranslator, AirbyteConnectionTableProps
+
+daily_partitions = DailyPartitionsDefinition(start_date="2025-01-01")
 
 class CustomDagsterAirbyteTranslator(DagsterAirbyteTranslator):
     def get_asset_spec(self, props: AirbyteConnectionTableProps) -> AssetSpec:
@@ -30,7 +32,8 @@ def get_airbyte_objects():
     airbyte_assets = build_airbyte_assets_definitions(
         workspace=airbyte_workspace,
         dagster_airbyte_translator=CustomDagsterAirbyteTranslator(),
-        connection_selector_fn=lambda connection: connection.name in connections_list
+        connection_selector_fn=lambda connection: connection.name in connections_list,
+        partitions_def=daily_partitions
     )
 
     return airbyte_workspace, airbyte_assets

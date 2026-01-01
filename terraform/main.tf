@@ -7,6 +7,28 @@ resource "aws_s3_bucket" "sentiment_bucket" {
   bucket = "snowflake-platform-sentiment"
 }
 
+resource "aws_s3_bucket_lifecycle_configuration" "sentiment" {
+  bucket = aws_s3_bucket.sentiment_bucket.id
+
+  rule {
+    id     = "raw-sentiment-data-lifecycle"
+    status = "Enabled"
+
+  filter {
+      prefix = ""
+    }
+
+    transition {
+      days          = 30
+      storage_class = "INTELLIGENT_TIERING"
+    }
+
+    expiration {
+      days = 365
+    }
+  }
+}
+
 resource "aws_s3_bucket" "sentiment_notifications_bucket" {
   bucket = "snowflake-platform-sentiment-notifications"
 }
